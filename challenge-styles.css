@@ -1,0 +1,103 @@
+body {
+  text-align: center;
+  background-color: rgb(243, 243, 243);
+  margin-bottom: 5rem;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.container {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.grid {
+  max-width: 609px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/******** Single Borders *********/
+
+img {
+  border: 3px solid red;
+}
+
+/* Todo: Fix the borders of the images so there are no double borders
+hint: :nth-child()*/
+
+
+/******** :has()  *********/
+
+.box {
+  background-color: bisque;
+  min-width: 250px;
+}
+
+/* Todo: highlight the boxes that contains p tags with the warning class */
+
+
+
+/******** Container media queries *********/
+
+.container-query {
+  container-type: inline-size;
+}
+
+.card {
+  padding: 1rem;
+  border: 1px solid #d9d6d6;
+  background-color: rgb(248, 242, 232);
+}
+
+.one {
+  width: 299px;
+}
+
+.two {
+  width: 450px;
+}
+
+.three {
+  width: 650px;
+}
+
+/* Todo: Write container queries for containers between 300px and
+500px and bigger then 500px. Change the colour and padding accordingly */
+
+
+
+
+/******** :Before and :after *********/
+
+.card-one {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  margin: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-one h2 {
+  margin: 0;
+  padding: 0;
+  color: #e74c3c;
+}
+
+.card-one p {
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+/*Use :before and :after to make it look like there are two pieces of red tape
+holding up the special offer card */
+
