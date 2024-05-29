@@ -29,8 +29,33 @@ img {
   border: 3px solid red;
 }
 
+img:nth-child(n) {
+  border-right: 0;
+}
+
+img:nth-child(3n) {
+  border-right: 3px solid red;
+}
+
+img:nth-child( n + 4 ) {
+  border-top: 0;
+}
+
 /* Todo: Fix the borders of the images so there are no double borders
 hint: :nth-child()*/
+
+
+/* Nich's solution
+img:nth-child(-n+6) {
+  border-bottom: none;
+}
+img:nth-child(1), 
+img:nth-child(2), 
+img:nth-child(3), 
+      etc {
+  border-right: none;
+
+*/
 
 
 /******** :has()  *********/
@@ -40,15 +65,23 @@ hint: :nth-child()*/
   min-width: 250px;
 }
 
+.box:has(.warning) {
+  background-color: pink;
+  font-weight: bolder;
+}
 /* Todo: highlight the boxes that contains p tags with the warning class */
 
-
+/* .box:has(>p.warning) {
+  background-color: blueviolet;
+  color: wheat;
+} */
 
 /******** Container media queries *********/
 
 .container-query {
   container-type: inline-size;
 }
+
 
 .card {
   padding: 1rem;
@@ -68,11 +101,38 @@ hint: :nth-child()*/
   width: 650px;
 }
 
+@container (300px < width < 500px) {
+  .card {
+    padding: 3rem;
+    background-color: pink;
+  }
+}
+
+@container (width > 500px) {
+  .card {
+    padding: 1rem;
+    background-color: lightcoral;
+  }
+}
 /* Todo: Write container queries for containers between 300px and
 500px and bigger then 500px. Change the colour and padding accordingly */
 
 
+/* 
+  Nich's solutions:
 
+  @container (min-width: 300px) {
+    .card {
+      .....
+    }
+  }
+
+  @container (min-width: 500px) {
+    .card {
+      ....
+    }
+  }
+*/
 
 /******** :Before and :after *********/
 
@@ -100,4 +160,27 @@ hint: :nth-child()*/
 
 /*Use :before and :after to make it look like there are two pieces of red tape
 holding up the special offer card */
+
+
+/* Nich's solution */
+.card-one::before,
+.card-one::after {
+  content:""; 
+  position:absolute;
+  top: -10px;
+  width: 50px;
+  height: 20px;
+  background-color: #e74c3c;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-one::before {
+  left: -10px;
+  transform: rotate(-45deg);
+}
+
+.card-one::after {
+  right: -10px;
+  transform: rotate(45deg);
+}
 
